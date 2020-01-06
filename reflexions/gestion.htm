@@ -1,0 +1,32 @@
+<body>
+
+<form method=post action=gestion.php>
+
+Titre : <input type=text name=titre size=60><br>
+Mots clés : <input type=text name=motscles size=60><br>
+Texte : <br>
+<textarea rows=20 cols=60 name=texte>
+</textarea>
+<br>
+<input type=submit value="Enregistrer">
+
+</form>
+
+<?php
+ include ('platform.php');
+ if (connexion() > 0)
+ {
+  if (strlen($texte) > 0)
+  {
+   $req = "INSERT INTO blog (titre, motscles, texte) VALUES ('$titre', '$motscles', $texte')";
+   $status = query ($req);
+   if (!$status)
+    echo ("Erreur enregistrement message");
+   else
+    echo ("Message enregistré");
+
+  }
+ }
+?>
+
+</body>

@@ -1,7 +1,6 @@
-
 <?php
- 
- 	include ("util.php3");
+	header('Content-Type: text/html; charset=ISO-8859-15');
+  	include ("util.php3");
 	if (connexion() > 0)
 	{
 		$query = "SELECT * FROM pages WHERE site = '$site' AND titre = '$titre'";

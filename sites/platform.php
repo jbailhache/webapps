@@ -38,10 +38,10 @@
  function mysql_query ($q)
  {
   global $cnx;
-  echo "<p>query $q.";
+  //echo "<p>query $q.";
   try
   {
-   $r = $cnx->query ($q);
+   //$r = $cnx->query ($q);
    $stmt = $cnx->prepare($q);
    if (!$stmt)
    {
@@ -139,5 +139,5 @@
 		$$var = format_input($val);
 	}
 
-	connexion();
+	//connexion();
 

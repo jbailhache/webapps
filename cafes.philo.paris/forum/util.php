@@ -50,13 +50,17 @@ function format1 ($s)
 
 function format ($s)
 {
+ trace("s=$s");
  //$s1 = addslashes (display($s));
  if (!get_magic_quotes_gpc())
  {
   $s = addslashes($s);
  }
+ trace("s=$s");
  $s1 = display($s);
  $s1 = str_replace('\\\'','\'\'',$s1);
+ $s1 = str_replace('\\"','"',$s1);
+ $s1 = str_replace('\\\\','\\',$s1);
  trace("s1=$s1");
  $s2 = format1($s1);
  trace("s1=$s1,s2=$s2");
@@ -97,6 +101,17 @@ function format_date ($dt)
  //list($date, $time) = explode(" ", $dt);
  //list($year, $month, $day) = explode("-", $date);
  //return "$day/$month/$year $time";
+}
+
+function num ($s)
+{
+	if (strval(intval($s)) == $s)
+		return $s;
+	else
+	{
+		echo "<h2><font color=darkred>ALERTE !!! TENTATIVE DE PIRATAGE DU SITE !!!</font></h2><p>C'est pas bien &ccedil;a...</p>";
+		exit();
+	}
 }
 
 function affichable ($rec)

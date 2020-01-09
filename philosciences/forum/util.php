@@ -103,6 +103,17 @@ function format_date ($dt)
  //return "$day/$month/$year $time";
 }
 
+function num ($s)
+{
+	if (strval(intval($s)) == $s)
+		return $s;
+	else
+	{
+		echo "<h2><font color=darkred>ALERTE !!! TENTATIVE DE PIRATAGE DU SITE !!!</font></h2><p>C'est pas bien &ccedil;a...</p>";
+		exit();
+	}
+}
+
 function affichable ($rec)
 {
  if ($_SESSION['moderateur'] == 'oui')

@@ -1,5 +1,5 @@
 <?php
-
+// Test
 function trace ($s)
 {
  // echo "<p>trace: $s ";

@@ -2,7 +2,7 @@
  
  $forum = "philosciences";
  $accueil = "../index.html";
- $passmod = "D0m1nu5";
+ $passmod = "thisisthepasswordofthemoderator";
 
  $couleur_fond_entete = "#887799";
  $couleur_fond_message = "green";
